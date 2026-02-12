@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式增强 */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 字体设置 */
+:root {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* 增强毛玻璃效果 */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 添加页面载入动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 呼吸背景动画 */
+@keyframes breathe {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 应用呼吸背景 */
+body {
+  background: linear-gradient(
+    120deg, 
+    #0b1e2e, 
+    #1a2f3f, 
+    #0a3d62, 
+    #1a2f3f
+  );
+  background-size: 400% 400%;
+  animation: breathe 20s ease infinite;
+}
+
+/* 增强金色渐变 */
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #d4af37, #f5d76e, #d4af37);
+  background-size: 200% 200%;
+  animation: breathe 8s ease infinite;
+}
+
+/* 滚动条隐藏 */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 输入框聚焦效果 */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
+}
